@@ -1,24 +1,26 @@
-##install torchmetrics and torchvision using pip
+##install torchmetrics and torchvision using pip3
 
-import numpy as np # type: ignore
-import torch # type: ignore
-import torch.nn as nn # type: ignore
-import torch.optim as optim # type: ignore
-from torch.utils.data import Dataset, DataLoader # type: ignore
-from torchmetrics import Accuracy, Precision, Recall # type: ignore
+import numpy as np 
+import matplotlib.pyplot as plt 
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import Dataset, DataLoader
+from torchmetrics import Accuracy, Precision, Recall 
 
 # Load datasets
-from torchvision import datasets # type: ignore
-import torchvision.transforms as transforms # type: ignore
+from torchvision import datasets
+import torchvision.transforms as transforms
 
-train_data = datasets.FashionMNIST(root='./data', train=True, download=True, transform=transforms.ToTensor())
-test_data = datasets.FashionMNIST(root='./data', train=False, download=True, transform=transforms.ToTensor())
+# Do not download as it will take time
+train_data = datasets.FashionMNIST(root='./data', train=True, download=False, transform=transforms.ToTensor())
+test_data = datasets.FashionMNIST(root='./data', train=False, download=False, transform=transforms.ToTensor())
 
 # Get the number of classes
 classes = train_data.classes
 num_classes = len(train_data.classes)
 
-# Define some relevant variables
+# Define srelevant variables
 num_input_channels = 1
 num_output_channels = 16
 image_size = train_data[0][0].shape[1]
