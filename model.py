@@ -1,4 +1,4 @@
-##install torchmetrics and torchvision using pip3
+# Install torchmetrics and torchvision using pip3
 
 import numpy as np 
 import matplotlib.pyplot as plt 
