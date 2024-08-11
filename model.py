@@ -16,6 +16,11 @@ import torchvision.transforms as transforms
 train_data = datasets.FashionMNIST(root='./data', train=True, download=False, transform=transforms.ToTensor())
 test_data = datasets.FashionMNIST(root='./data', train=False, download=False, transform=transforms.ToTensor())
 
+# Plot first image
+plt.imshow(train_data[0][0].numpy().squeeze())
+plt.show()
+# Item is shoe/sneaker
+
 # Get the number of classes
 classes = train_data.classes
 num_classes = len(train_data.classes)
